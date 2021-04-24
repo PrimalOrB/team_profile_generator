@@ -3,7 +3,7 @@ module.exports = inputData => {
     const engineer = inputData.filter(x => x.role == 'Engineer') 
     const intern  = inputData.filter(x => x.role == 'Intern') 
 
-    console.log( manager, engineer, intern)
+    console.log( manager, engineer, intern )
 
     return `
     <!DOCTYPE html>
