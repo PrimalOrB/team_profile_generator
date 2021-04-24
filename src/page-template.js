@@ -1,9 +1,17 @@
+// parse the input data into a string for to display in the HTML
+function parseArr( data ) {
+    let post = []
+    data.map( x => {
+        post.push(x.str)
+    })
+    return post.join('')
+}
+
+
 module.exports = inputData => {
     const manager = inputData.filter(x => x.role == 'Manager') 
     const engineer = inputData.filter(x => x.role == 'Engineer') 
     const intern  = inputData.filter(x => x.role == 'Intern') 
-
-    console.log( manager, engineer, intern )
 
     return `
     <!DOCTYPE html>
@@ -20,9 +28,13 @@ module.exports = inputData => {
   
     <body>
       <header>
+        <h1>My Team</h1>
       </header>
 
       <main>
+        <ul id="card-list">
+            ${ parseArr( inputData ) }
+        </ul>
       </main>
 
       <footer>
