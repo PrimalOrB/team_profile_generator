@@ -1,3 +1,3 @@
 const Init = require( './lib/Init' );
 
-new Init().initInput()
+new Init().initInput( 'Manager' )
