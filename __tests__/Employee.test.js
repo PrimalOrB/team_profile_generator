@@ -60,7 +60,7 @@ test( 'test employee getEmail()', () => {
 })
 
 test( 'test employee getEmail()', () => {
-    const employee = new Employee( 'Bob', 22, 'bob@bob.com', 'Employee' );
+    const employee = new Employee( 'Bob', 22, 'bob@bob.com' );
 
     expect( employee.getRole() ).toEqual( 'Employee' )
 })
