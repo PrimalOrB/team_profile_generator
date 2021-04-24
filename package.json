@@ -1,0 +1,37 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "Node.js tool to create an employee directory HTML page based on terminal inputs",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrimalOrB/team_profile_generator.git"
+  },
+  "keywords": [
+    "node",
+    "jest",
+    "inquirer",
+    "html",
+    "css",
+    "oop",
+    "tdd"
+  ],
+  "author": "Andrew Ogilvie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PrimalOrB/team_profile_generator/issues"
+  },
+  "homepage": "https://github.com/PrimalOrB/team_profile_generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
