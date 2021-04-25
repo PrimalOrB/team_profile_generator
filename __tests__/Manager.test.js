@@ -74,8 +74,8 @@ test( 'test manager generateString()', () => {
 
     expect( manager.generateString() ).toEqual( expect.stringContaining( manager.logo ) );
     expect( manager.generateString() ).toEqual( expect.stringContaining( manager.name ) );
-    expect( manager.generateString() ).toEqual( expect.stringContaining( `ID: ${manager.id}` ) );
+    expect( manager.generateString() ).toEqual( expect.stringContaining( `</span><span class="line-content">${ manager.id }</span>` ) );
     expect( manager.generateString() ).toEqual( expect.stringContaining( manager.email ) );
     expect( manager.generateString() ).toEqual( expect.stringContaining( manager.role ) );
-    expect( manager.generateString() ).toEqual( expect.stringContaining( `Office number: ${manager.officeNumber}` ) );
+    expect( manager.generateString() ).toEqual( expect.stringContaining( `Office ${manager.officeNumber}` ) );
 })

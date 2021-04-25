@@ -1,7 +1,5 @@
 const Employee = require( '../lib/Employee' );
 
-// jest.mock( '../lib/Employee' );
-
 test( 'verify employee name is entered', () => {
     const employee = new Employee( {'name':'Bob', 'id':22, 'email':'bob@bob.com'} );
     // expect name to be string
