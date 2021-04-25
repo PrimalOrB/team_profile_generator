@@ -74,8 +74,8 @@ test( 'test intern generateString()', () => {
 
     expect( intern.generateString() ).toEqual( expect.stringContaining( intern.logo ) );
     expect( intern.generateString() ).toEqual( expect.stringContaining( intern.name ) );
-    expect( intern.generateString() ).toEqual( expect.stringContaining( `ID: ${intern.id}` ) );
+    expect( intern.generateString() ).toEqual( expect.stringContaining( `</span><span class="line-content">${ intern.id }</span>` ) );
     expect( intern.generateString() ).toEqual( expect.stringContaining( intern.email ) );
     expect( intern.generateString() ).toEqual( expect.stringContaining( intern.role ) );
-    expect( intern.generateString() ).toEqual( expect.stringContaining( `School: ${intern.school}` ) );
+    expect( intern.generateString() ).toEqual( expect.stringContaining( `</span><span class="line-content">${ intern.school }</span>` ) );
 })
