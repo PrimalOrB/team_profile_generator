@@ -7,12 +7,7 @@ function parseArr( data ) {
     return post.join('')
 }
 
-
 module.exports = inputData => {
-    // const manager = inputData.filter(x => x.role == 'Manager') 
-    // const engineer = inputData.filter(x => x.role == 'Engineer') 
-    // const intern  = inputData.filter(x => x.role == 'Intern') 
-
     return `
     <!DOCTYPE html>
     <html lang="en">
