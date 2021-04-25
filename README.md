@@ -28,7 +28,7 @@ A node.js terminal based application to generate an HTML page displaying a workp
 
 ## Usage
 
-- Run 'node index.js' from the terminal
+- Run `node index.js` from the terminal
 - Follow prompts to enter all the information for a manage
   - Name
   - ID
