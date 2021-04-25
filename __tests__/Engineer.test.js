@@ -1,7 +1,7 @@
 const Engineer = require( '../lib/Engineer' );
 
 test( 'verify engineer name is entered', () => {
-    const engineer = new Engineer( 'Bob', 22, 'bob@bob.com' );
+    const engineer = new Engineer( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'github':'bobHub'} );
     // expect name to be string
     expect( engineer.name ).toEqual( expect.any( String ) );
     
@@ -12,7 +12,7 @@ test( 'verify engineer name is entered', () => {
 })
 
 test( 'verify engineer id is number', () => {
-    const engineer = new Engineer( 'Bob', 22, 'bob@bob.com' );
+    const engineer = new Engineer( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'github':'bobHub'} );
     //expect id to be number
     expect( Number( engineer.id ) ).toEqual( expect.any( Number ) );
 
@@ -23,7 +23,7 @@ test( 'verify engineer id is number', () => {
 })
 
 test( 'verify that email address is correct', () => {
-    const engineer = new Engineer( 'Bob', 22, 'bob@bob.com' );
+    const engineer = new Engineer( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'github':'bobHub'} );
 
     // check if string
     expect( engineer.email ).toEqual( expect.any( String ) );
@@ -40,31 +40,42 @@ test( 'verify that email address is correct', () => {
 })
 
 test( 'test engineer getName()', () => {
-    const engineer = new Engineer( 'Bob', 22, 'bob@bob.com' );
+    const engineer = new Engineer( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'github':'bobHub'} );
 
     expect( engineer.getName() ).toEqual( 'Bob' )
 })
 
 test( 'test engineer getId()', () => {
-    const engineer = new Engineer( 'Bob', 22, 'bob@bob.com' );
+    const engineer = new Engineer( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'github':'bobHub'} );
 
     expect( engineer.getId() ).toEqual( 22 )
 })
 
 test( 'test engineer getEmail()', () => {
-    const engineer = new Engineer( 'Bob', 22, 'bob@bob.com' );
+    const engineer = new Engineer( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'github':'bobHub'} );
 
     expect( engineer.getEmail() ).toEqual( 'bob@bob.com' )
 })
 
 test( 'test engineer getRole()', () => {
-    const engineer = new Engineer( 'Bob', 22, 'bob@bob.com' );
+    const engineer = new Engineer( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'github':'bobHub'} );
 
     expect( engineer.getRole() ).toEqual( 'Engineer' )
 })
 
 test( 'test engineer getGitHub()', () => {
-    const engineer = new Engineer( 'Bob', 22, 'bob@bob.com', 'bobHub' );
+    const engineer = new Engineer( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'bobHub'} );
 
     expect( engineer.getGitHub() ).toEqual( 'bobHub' )
+})
+
+test( 'test engineer generateString()', () => {
+    const engineer = new Engineer( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'bobHub'} );
+
+    expect( engineer.generateString() ).toEqual( expect.stringContaining( engineer.logo ) );
+    expect( engineer.generateString() ).toEqual( expect.stringContaining( engineer.name ) );
+    expect( engineer.generateString() ).toEqual( expect.stringContaining( `ID: ${engineer.id}` ) );
+    expect( engineer.generateString() ).toEqual( expect.stringContaining( engineer.email ) );
+    expect( engineer.generateString() ).toEqual( expect.stringContaining( engineer.role ) );
+    expect( engineer.generateString() ).toEqual( expect.stringContaining( `http://github.com/${engineer.github}` ) );
 })

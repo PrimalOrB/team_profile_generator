@@ -1,7 +1,7 @@
 const Manager = require( '../lib/Manager' );
 
 test( 'verify manager name is entered', () => {
-    const manager = new Manager( 'Bob', 22, 'bob@bob.com' );
+    const manager = new Manager( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':22} );
     // expect name to be string
     expect( manager.name ).toEqual( expect.any( String ) );
     
@@ -12,7 +12,7 @@ test( 'verify manager name is entered', () => {
 })
 
 test( 'verify manager id is number', () => {
-    const manager = new Manager( 'Bob', 22, 'bob@bob.com' );
+    const manager = new Manager( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':22} );
     //expect id to be number
     expect( Number( manager.id ) ).toEqual( expect.any( Number ) );
 
@@ -23,7 +23,7 @@ test( 'verify manager id is number', () => {
 })
 
 test( 'verify that email address is correct', () => {
-    const manager = new Manager( 'Bob', 22, 'bob@bob.com' );
+    const manager = new Manager( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':22} );
 
     // check if string
     expect( manager.email ).toEqual( expect.any( String ) );
@@ -40,31 +40,42 @@ test( 'verify that email address is correct', () => {
 })
 
 test( 'test manager getName()', () => {
-    const manager = new Manager( 'Bob', 22, 'bob@bob.com' );
+    const manager = new Manager( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':22} );
 
     expect( manager.getName() ).toEqual( 'Bob' )
 })
 
 test( 'test manager getId()', () => {
-    const manager = new Manager( 'Bob', 22, 'bob@bob.com' );
+    const manager = new Manager( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':22} );
 
     expect( manager.getId() ).toEqual( 22 )
 })
 
 test( 'test manager getEmail()', () => {
-    const manager = new Manager( 'Bob', 22, 'bob@bob.com' );
+    const manager = new Manager( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':22} );
 
     expect( manager.getEmail() ).toEqual( 'bob@bob.com' )
 })
 
 test( 'test manager getRole()', () => {
-    const manager = new Manager( 'Bob', 22, 'bob@bob.com' );
+    const manager = new Manager( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':22} );
 
     expect( manager.getRole() ).toEqual( 'Manager' )
 })
 
 test( 'test manager office number', () => {
-    const manager = new Manager( 'Bob', 22, 'bob@bob.com', 32 );
+    const manager = new Manager( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':22} );
 
     expect( manager.officeNumber ).toEqual( expect.any( Number ) );
+})
+
+test( 'test manager generateString()', () => {
+    const manager = new Manager( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':22} );
+
+    expect( manager.generateString() ).toEqual( expect.stringContaining( manager.logo ) );
+    expect( manager.generateString() ).toEqual( expect.stringContaining( manager.name ) );
+    expect( manager.generateString() ).toEqual( expect.stringContaining( `ID: ${manager.id}` ) );
+    expect( manager.generateString() ).toEqual( expect.stringContaining( manager.email ) );
+    expect( manager.generateString() ).toEqual( expect.stringContaining( manager.role ) );
+    expect( manager.generateString() ).toEqual( expect.stringContaining( `Office number: ${manager.officeNumber}` ) );
 })

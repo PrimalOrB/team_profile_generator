@@ -1,7 +1,7 @@
 const Intern = require( '../lib/Intern' );
 
 test( 'verify intern name is entered', () => {
-    const intern = new Intern( 'Bob', 22, 'bob@bob.com' );
+    const intern = new Intern( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'UofT'} );
     // expect name to be string
     expect( intern.name ).toEqual( expect.any( String ) );
     
@@ -12,7 +12,7 @@ test( 'verify intern name is entered', () => {
 })
 
 test( 'verify intern id is number', () => {
-    const intern = new Intern( 'Bob', 22, 'bob@bob.com' );
+    const intern = new Intern( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'UofT'} );
     //expect id to be number
     expect( Number( intern.id ) ).toEqual( expect.any( Number ) );
 
@@ -23,7 +23,7 @@ test( 'verify intern id is number', () => {
 })
 
 test( 'verify that email address is correct', () => {
-    const intern = new Intern( 'Bob', 22, 'bob@bob.com' );
+    const intern = new Intern( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'UofT'} );
 
     // check if string
     expect( intern.email ).toEqual( expect.any( String ) );
@@ -40,31 +40,42 @@ test( 'verify that email address is correct', () => {
 })
 
 test( 'test intern getName()', () => {
-    const intern = new Intern( 'Bob', 22, 'bob@bob.com' );
+    const intern = new Intern( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'UofT'} );
 
     expect( intern.getName() ).toEqual( 'Bob' )
 })
 
 test( 'test intern getId()', () => {
-    const intern = new Intern( 'Bob', 22, 'bob@bob.com' );
+    const intern = new Intern( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'UofT'} );
 
     expect( intern.getId() ).toEqual( 22 )
 })
 
 test( 'test intern getEmail()', () => {
-    const intern = new Intern( 'Bob', 22, 'bob@bob.com' );
+    const intern = new Intern( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'UofT'} );
 
     expect( intern.getEmail() ).toEqual( 'bob@bob.com' )
 })
 
 test( 'test intern getRole()', () => {
-    const intern = new Intern( 'Bob', 22, 'bob@bob.com' );
+    const intern = new Intern( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'UofT'} );
 
     expect( intern.getRole() ).toEqual( 'Intern' )
 })
 
 test( 'test intern getSchool()', () => {
-    const intern = new Intern( 'Bob', 22, 'bob@bob.com', 'UofT' );
+    const intern = new Intern( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'UofT'} );
 
     expect( intern.getSchool() ).toEqual( 'UofT' )
+})
+
+test( 'test intern generateString()', () => {
+    const intern = new Intern( {'name':'Bob', 'id':22, 'email':'bob@bob.com', 'meta':'UofT'} );
+
+    expect( intern.generateString() ).toEqual( expect.stringContaining( intern.logo ) );
+    expect( intern.generateString() ).toEqual( expect.stringContaining( intern.name ) );
+    expect( intern.generateString() ).toEqual( expect.stringContaining( `ID: ${intern.id}` ) );
+    expect( intern.generateString() ).toEqual( expect.stringContaining( intern.email ) );
+    expect( intern.generateString() ).toEqual( expect.stringContaining( intern.role ) );
+    expect( intern.generateString() ).toEqual( expect.stringContaining( `School: ${intern.school}` ) );
 })

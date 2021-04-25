@@ -3,7 +3,7 @@ const Employee = require( '../lib/Employee' );
 // jest.mock( '../lib/Employee' );
 
 test( 'verify employee name is entered', () => {
-    const employee = new Employee( 'Bob', 22, 'bob@bob.com' );
+    const employee = new Employee( {'name':'Bob', 'id':22, 'email':'bob@bob.com'} );
     // expect name to be string
     expect( employee.name ).toEqual( expect.any( String ) );
     
@@ -14,7 +14,7 @@ test( 'verify employee name is entered', () => {
 })
 
 test( 'verify employee id is number', () => {
-    const employee = new Employee( 'Bob', 22, 'bob@bob.com' );
+    const employee = new Employee( {'name':'Bob', 'id':22, 'email':'bob@bob.com'} );
     //expect id to be number
     expect( Number( employee.id ) ).toEqual( expect.any( Number ) );
 
@@ -25,7 +25,7 @@ test( 'verify employee id is number', () => {
 })
 
 test( 'verify that email address is correct', () => {
-    const employee = new Employee( 'Bob', 22, 'bob@bob.com' );
+    const employee = new Employee( {'name':'Bob', 'id':22, 'email':'bob@bob.com'} );
 
     // check if string
     expect( employee.email ).toEqual( expect.any( String ) );
@@ -42,25 +42,25 @@ test( 'verify that email address is correct', () => {
 })
 
 test( 'test employee getName()', () => {
-    const employee = new Employee( 'Bob', 22, 'bob@bob.com' );
+    const employee = new Employee( {'name':'Bob', 'id':22, 'email':'bob@bob.com'} );
 
     expect( employee.getName() ).toEqual( 'Bob' )
 })
 
 test( 'test employee getId()', () => {
-    const employee = new Employee( 'Bob', 22, 'bob@bob.com' );
+    const employee = new Employee( {'name':'Bob', 'id':22, 'email':'bob@bob.com'} );
 
     expect( employee.getId() ).toEqual( 22 )
 })
 
 test( 'test employee getEmail()', () => {
-    const employee = new Employee( 'Bob', 22, 'bob@bob.com' );
+    const employee = new Employee( {'name':'Bob', 'id':22, 'email':'bob@bob.com'} );
 
     expect( employee.getEmail() ).toEqual( 'bob@bob.com' )
 })
 
 test( 'test employee getEmail()', () => {
-    const employee = new Employee( 'Bob', 22, 'bob@bob.com' );
+    const employee = new Employee( {'name':'Bob', 'id':22, 'email':'bob@bob.com'} );
 
     expect( employee.getRole() ).toEqual( 'Employee' )
 })

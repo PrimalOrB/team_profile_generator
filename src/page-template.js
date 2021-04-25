@@ -2,16 +2,16 @@
 function parseArr( data ) {
     let post = []
     data.map( x => {
-        post.push(x.str)
+        post.push( x.generateString() )
     })
     return post.join('')
 }
 
 
 module.exports = inputData => {
-    const manager = inputData.filter(x => x.role == 'Manager') 
-    const engineer = inputData.filter(x => x.role == 'Engineer') 
-    const intern  = inputData.filter(x => x.role == 'Intern') 
+    // const manager = inputData.filter(x => x.role == 'Manager') 
+    // const engineer = inputData.filter(x => x.role == 'Engineer') 
+    // const intern  = inputData.filter(x => x.role == 'Intern') 
 
     return `
     <!DOCTYPE html>
