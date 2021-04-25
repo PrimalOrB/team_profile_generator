@@ -6,6 +6,8 @@
 
 A node.js terminal based application to generate an HTML page displaying a workplace team of a Manager, Engineers, and Interns and their information
 
+![image](https://user-images.githubusercontent.com/69044956/115999949-264dce00-a5bc-11eb-8dbe-365ab9968774.png)
+
 ## Table Of Contents
 
 - [Installation](#installation)
