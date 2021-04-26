@@ -34,7 +34,7 @@ A node.js terminal based application to generate an HTML page displaying a workp
   - ID
   - Email address
   - Office
-- You are prompted to add more employeed
+- You are prompted to add more employees
 - Engineer
   - Name
   - ID
